@@ -8,14 +8,25 @@
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![No Build](https://img.shields.io/badge/Build-Zero-2E7D32)](https://github.com/Abdoulrazack1/portfolio_pro)
 
-<!-- 🚀 Démo en direct (à déployer sur GitHub Pages depuis le repo) :
-     ✨ Visiter le portfolio en ligne → [DÉPLOIEMENT REQUIS — voir section Déployer ci-dessous] -->
+## 🚀 Démo en direct
+
+**→ [https://abdoulrazack1.github.io/portfolio_pro/](https://abdoulrazack1.github.io/portfolio_pro/)**
+
+[![Hero — portfolio_pro](asset/screenshots/hero.png)](https://abdoulrazack1.github.io/portfolio_pro/)
+
+<details>
+<summary>📱 Vue mobile</summary>
+
+![Mobile view](asset/screenshots/mobile.png)
+
+</details>
 
 <!-- 📽️ GIF à ajouter ici : 15s montrant
      1) hero avec icosaèdre Three.js qui tourne
      2) curseur magnétique sur boutons
      3) hover 3D tilt sur cartes projets
-     4) exploded view 3D au scroll vers Skills -->
+     4) exploded view 3D au scroll vers Skills
+     (les screenshots statiques ci-dessus capturent l'état initial) -->
 
 ---
 
