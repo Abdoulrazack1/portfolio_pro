@@ -1,17 +1,74 @@
-# Portfolio · Abdoulrazack Abdillahi
+# ✨ portfolio_pro — Portfolio interactif sans framework
 
-Portfolio personnel — **Développeur Web & Web Mobile** (formation DWWM, basé à Lille).
+> **Site personnel one-page** — Vanilla JS pur, Three.js (icosaèdre wireframe + exploded view), curseur magnétique custom, scroll-aware nav, 3D tilt, IntersectionObserver. **Zero framework, zero build, zero dépendance externe** (Three.js bundlé localement).
 
-## Stack
+[![Vanilla JS](https://img.shields.io/badge/JavaScript-Vanilla-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![Three.js](https://img.shields.io/badge/Three.js-000000?logo=three.js&logoColor=white)](https://threejs.org/)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![No Build](https://img.shields.io/badge/Build-Zero-2E7D32)](https://github.com/Abdoulrazack1/portfolio_pro)
 
-- **HTML5** sémantique
-- **CSS3** vanilla (CSS variables, Flexbox, Grid, gradient mesh, blend modes)
-- **JavaScript** vanilla (IntersectionObserver, custom cursor magnétique, scroll-aware nav, 3D tilt)
-- **Three.js r128** pour les scènes 3D (icosaèdre wireframe + exploded view de polyèdres)
-- **Typographies** : Fraunces (display italique) · Manrope (body) · JetBrains Mono (technique)
-- **Sans framework**, sans build, zéro dépendance externe (Three.js bundlé localement)
+<!-- 🚀 Démo en direct (à déployer sur GitHub Pages depuis le repo) :
+     ✨ Visiter le portfolio en ligne → [DÉPLOIEMENT REQUIS — voir section Déployer ci-dessous] -->
 
-## Structure
+<!-- 📽️ GIF à ajouter ici : 15s montrant
+     1) hero avec icosaèdre Three.js qui tourne
+     2) curseur magnétique sur boutons
+     3) hover 3D tilt sur cartes projets
+     4) exploded view 3D au scroll vers Skills -->
+
+---
+
+## 💎 Points forts techniques
+
+| Choix | Pourquoi c'est intéressant |
+|---|---|
+| **Vanilla JS pur** | Démonstration de maîtrise du langage et des APIs natives — IntersectionObserver, matchMedia, requestAnimationFrame, passive events |
+| **Three.js intégré** | Icosaèdre filaire + exploded view de polyèdres — scène 3D légère (603 KB bundle local, pas de CDN) |
+| **Zero build, zero framework** | Aucun webpack/vite/parcel — tu clone, tu ouvres, ça marche. Lighthouse > 95 perf attendu |
+| **Accessibilité first-class** | `prefers-reduced-motion` respecté, `aria-label` + `aria-hidden` corrects, sémantique HTML5 |
+| **Mobile-aware** | Détection `isCoarsePointer` + `isMobile` → désactive le curseur magnétique sur touch |
+| **SEO + Open Graph** | Meta tags, og:title/description/type pour partage social |
+
+---
+
+## 🎨 Effets visuels
+
+- **Curseur magnétique** custom avec `mix-blend-mode: difference` sur hover
+- **Scroll progress bar** en haut avec gradient animé
+- **3D tilt** sur les cartes projets (perspective + rotateX/Y suivant la souris)
+- **Radial light** sur les cartes Skills (CSS variables suivant le curseur)
+- **Shine sweep** sur les boutons au survol
+- **Reveal en cascade** au scroll (IntersectionObserver, stagger)
+- **Gradient stroke text** sur les accents (gold → persimmon)
+- **Pulsing dot** sur les numéros de section
+- **Marquee infini** des technos entre hero et about
+- **Exploded view 3D** flottant en arrière-plan de la section Skills
+
+---
+
+## 📦 Quick Start
+
+Aucun build nécessaire. Ouvre `index.html` dans un navigateur, ou lance un serveur statique :
+
+```bash
+git clone https://github.com/Abdoulrazack1/portfolio_pro.git
+cd portfolio_pro
+
+# Python
+python3 -m http.server 8000
+
+# Node
+npx serve .
+```
+
+Puis ouvre **http://localhost:8000**.
+
+> ⚠️ Three.js nécessite le protocole `http://` pour se charger (CORS). Ouvrir `index.html` directement (`file://`) peut empêcher les scènes 3D de s'afficher selon le navigateur.
+
+---
+
+## 🏗️ Architecture
 
 ```
 portfolio_pro/
@@ -19,7 +76,7 @@ portfolio_pro/
 ├── README.md
 ├── asset/
 │   ├── css/
-│   │   └── styles.css      ← tout le CSS (CSS variables, animations, responsive)
+│   │   └── styles.css      ← tout le CSS (variables, animations, responsive)
 │   ├── js/
 │   │   └── main.js         ← interactions + scènes Three.js
 │   ├── vendor/
@@ -35,23 +92,9 @@ portfolio_pro/
 │       └── inko.jpg
 ```
 
-## Lancer en local
+---
 
-Aucun build nécessaire. Ouvre `index.html` dans un navigateur, ou lance un serveur statique :
-
-```bash
-# Python
-python3 -m http.server 8000
-
-# Node (avec npx)
-npx serve .
-```
-
-Puis ouvre **http://localhost:8000**.
-
-> ⚠️ Three.js a besoin du protocole `http://` pour se charger (CORS). Ouvrir `index.html` directement (`file://`) peut empêcher les scènes 3D de s'afficher selon le navigateur.
-
-## Ce qu'il contient
+## 📐 Sections
 
 - **Hero** — pitch principal avec **icosaèdre wireframe Three.js** + particules + coords GPS Lille
 - **À propos** — photo + philosophie de travail (3 piliers)
@@ -67,35 +110,59 @@ Puis ouvre **http://localhost:8000**.
 - **Parcours** — timeline DWWM (5 étapes)
 - **Contact** — formulaire avec validation + canaux directs (email, GitHub, LinkedIn)
 
-## Effets visuels notables
+---
 
-- **Curseur custom** avec effet hover + mix-blend-mode difference
-- **Scroll progress bar** en haut avec gradient animé
-- **3D tilt** sur les cartes projets (perspective + rotateX/Y suivant la souris)
-- **Radial light** sur les cartes skills suivant le curseur (CSS variables)
-- **Shine sweep** sur les boutons au survol
-- **Reveal en cascade** avec stagger sur scroll (IntersectionObserver)
-- **Gradient stroke text** sur les accents (gold→persimmon)
-- **Pulsing dot** sur les numéros de section
-- **Marquee infini** des technos entre hero et about
+## ⚙️ Personnalisation rapide
 
-## Personnalisation rapide
-
-| Élément | Fichier | Endroit |
+| Élément | Fichier | Où chercher |
 |---|---|---|
 | Couleur d'accent (orange persimmon) | `asset/css/styles.css` | `:root --accent` |
-| Email | `index.html` | recherche `abdoul.abdillahi@gmail.com` |
-| Téléphone | `index.html` | recherche `+33 7 84 68 54 65` |
-| URL LinkedIn | `index.html` | recherche `linkedin.com` |
-| Liens GitHub | `index.html` | recherche `Abdoulrazack1` |
-| Coords GPS hero | `index.html` | recherche `LILLE · FR` |
+| Email | `index.html` | `abdoul.abdillahi@gmail.com` |
+| Téléphone | `index.html` | `+33 7 84 68 54 65` |
+| URL LinkedIn | `index.html` | `linkedin.com` |
+| Liens GitHub | `index.html` | `Abdoulrazack1` |
+| Coords GPS hero | `index.html` | `LILLE · FR` |
 
-## Déployer sur GitHub Pages
+---
 
-1. Pousse les fichiers dans ton repo `Portfolio` (branche `main`)
-2. Settings → Pages → Source : `Deploy from a branch` → Branch : `main` / `/ (root)` → Save
-3. Ton site sera accessible sur `https://abdoulrazack1.github.io/Portfolio/` en ~1 minute
+## 🚀 Déployer sur GitHub Pages
 
-## Crédits
+1. Pousse les fichiers dans ton repo `portfolio_pro` (branche `main`)
+2. **Settings → Pages → Source** : `Deploy from a branch` → Branch : `main` / `/ (root)` → Save
+3. Ton site sera accessible sur `https://abdoulrazack1.github.io/portfolio_pro/` en ~1 minute
+
+> ☝️ **Action recommandée** : déployer et mettre le lien live ici-même, en haut du README. C'est le single biggest boost pour ce repo (un portfolio doit être visitable).
+
+---
+
+## 📊 Performance
+
+À mesurer après déploiement (Lighthouse mobile, throttled Fast 3G) :
+
+| Métrique | Cible | Actuel |
+|---|---|---|
+| Performance | ≥ 95 | _à mesurer_ |
+| Accessibility | 100 | _à mesurer_ |
+| Best Practices | 100 | _à mesurer_ |
+| SEO | 100 | _à mesurer_ |
+
+---
+
+## 🛠️ Stack détaillée
+
+- **HTML5** sémantique
+- **CSS3** vanilla (CSS variables, Flexbox, Grid, gradient mesh, blend modes)
+- **JavaScript** vanilla (IntersectionObserver, custom cursor magnétique, scroll-aware nav, 3D tilt)
+- **Three.js r128** pour les scènes 3D (icosaèdre wireframe + exploded view de polyèdres)
+- **Typographies** : Fraunces (display italique) · Manrope (body) · JetBrains Mono (technique)
+- **Sans framework**, sans build, zéro dépendance externe (Three.js bundlé localement)
+
+---
+
+## 🤝 Contribuer
+
+Pas un projet collaboratif (portfolio personnel), mais les retours / issues sont bienvenus si tu vois un bug ou une amélioration UX.
+
+## 📜 Crédits
 
 Photo, projets et identité : **Abdoulrazack Abdillahi** · 2026 · Lille
