@@ -14,19 +14,14 @@
 
 [![Hero — portfolio_pro](asset/screenshots/hero.png)](https://abdoulrazack1.github.io/portfolio_pro/)
 
+![Scroll through portfolio_pro — Hero → À propos → Stack & compétences](asset/screenshots/scroll.gif)
+
 <details>
 <summary>📱 Vue mobile</summary>
 
 ![Mobile view](asset/screenshots/mobile.png)
 
 </details>
-
-<!-- 📽️ GIF à ajouter ici : 15s montrant
-     1) hero avec icosaèdre Three.js qui tourne
-     2) curseur magnétique sur boutons
-     3) hover 3D tilt sur cartes projets
-     4) exploded view 3D au scroll vers Skills
-     (les screenshots statiques ci-dessus capturent l'état initial) -->
 
 ---
 
