@@ -31,7 +31,7 @@
 |---|---|
 | **Vanilla JS pur** | Démonstration de maîtrise du langage et des APIs natives — IntersectionObserver, matchMedia, requestAnimationFrame, passive events |
 | **Three.js intégré** | Icosaèdre filaire + exploded view de polyèdres — scène 3D légère (603 KB bundle local, pas de CDN) |
-| **Zero build, zero framework** | Aucun webpack/vite/parcel — tu clone, tu ouvres, ça marche. Lighthouse > 95 perf attendu |
+| **Zero build, zero framework** | Aucun webpack/vite/parcel — tu clone, tu ouvres, ça marche. Lighthouse desktop **94 perf / 94 a11y / 96 bp / 100 seo** ([détail plus bas](#-performance-lighthouse-réel-sur-gh-pages-live)) |
 | **Accessibilité first-class** | `prefers-reduced-motion` respecté, `aria-label` + `aria-hidden` corrects, sémantique HTML5 |
 | **Mobile-aware** | Détection `isCoarsePointer` + `isMobile` → désactive le curseur magnétique sur touch |
 | **SEO + Open Graph** | Meta tags, og:title/description/type pour partage social |
@@ -141,16 +141,20 @@ portfolio_pro/
 
 ---
 
-## 📊 Performance
+## 📊 Performance (Lighthouse réel sur GH Pages live)
 
-À mesurer après déploiement (Lighthouse mobile, throttled Fast 3G) :
+| Métrique          | Desktop | Mobile (slow 4G) |
+|-------------------|:-------:|:-----------------:|
+| **Performance**   | **94**  | 33 |
+| **Accessibility** | **94**  | **94** |
+| **Best Practices**| **96**  | **96** |
+| **SEO**           | **100** | **100** |
+| LCP               | 1.1 s   | 7.3 s |
+| FCP               | 1.0 s   | 6.9 s |
+| TBT               | 0 ms    | 1 440 ms |
+| CLS               | 0.038   | 0.005 |
 
-| Métrique | Cible | Actuel |
-|---|---|---|
-| Performance | ≥ 95 | _à mesurer_ |
-| Accessibility | 100 | _à mesurer_ |
-| Best Practices | 100 | _à mesurer_ |
-| SEO | 100 | _à mesurer_ |
+**Lecture honnête** : desktop excellent (94 perf, FCP 1s). Le mobile chute à 33 perf parce que Three.js r128 bundlé localement = 603 KB qui s'exécutent au paint sous throttling 4G — c'est le compromis assumé du "zero CDN, zero build". A11y / SEO / BP restent au top sur les deux profils.
 
 ---
 
